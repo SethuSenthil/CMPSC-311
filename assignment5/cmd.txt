@@ -1,0 +1,14 @@
+# Start Server
+./jbod_server -p 6962
+
+# Run Tests
+./tester -w traces/linear-input -s 1024 >x
+diff  x traces/linear-expected-output
+
+
+./tester -w traces/simple-input -s 1024 >x
+diff  x traces/simple-expected-output
+
+
+./tester -w traces/random-input -s 1024 >x
+diff  x traces/random-expected-output
